@@ -3,48 +3,33 @@
   padding: 0;
   box-sizing: border-box;
   color: white;
+  font-family: Arial, sans-serif;
 }
 
-/* ================= BODY ================= */
+/* ================= BACKGROUND ================= */
+
 body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-    background-image: url("https://thumbs.dreamstime.com/b/unhealthy-fast-food-delivery-menu-featuring-assorted-burgers-cheeseburgers-nuggets-french-fries-soda-high-calorie-low-356045884.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-
-    position: relative;
+  background-image: url("https://thumbs.dreamstime.com/b/unhealthy-fast-food-delivery-menu-featuring-assorted-burgers-cheeseburgers-nuggets-french-fries-soda-high-calorie-low-356045884.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-/* ================= DARK OVERLAY FIX ================= */
+/* DARK OVERLAY */
 body::before{
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.623);
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* EVERYTHING ABOVE OVERLAY */
-.navbar,
-.menu-bar,
-#cartItems,
-.shipping,
-footer{
-    position: relative;
-    z-index: 1;
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
 }
 
 /* ================= NAVBAR ================= */
+
 .navbar{
   height:70px;
   background:#420808;
-
   display:flex;
   align-items:center;
   justify-content:space-around;
@@ -54,10 +39,6 @@ footer{
   font-size:32px;
   font-weight:bold;
   color:orange;
-}
-
-.location{
-  font-size:18px;
 }
 
 .search{
@@ -82,23 +63,12 @@ footer{
   padding:12px;
 }
 
-/* ================= MENU ================= */
-.menu-bar{
-  height:50px;
-  background:#6b0b0b;
-
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-}
-
 .links{
   display:flex;
   gap:30px;
 }
 
-.links a,
-.menu-bar a{
+.links a{
   text-decoration:none;
   color:white;
 }
@@ -107,7 +77,18 @@ footer{
   color:orange;
 }
 
-/* ================= CART ITEMS ================= */
+/* ================= MENU BAR ================= */
+
+.menu-bar{
+  height:50px;
+  background:#6b0b0b;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
+
+/* ================= CART ================= */
+
 #cartItems{
   margin:30px;
 }
@@ -115,31 +96,30 @@ footer{
 .item{
   background:transparent;
   padding:20px;
-  margin:10px;
+  margin:10px 0;
   border-radius:10px;
+  border:2px solid #aaa;
   color:white;
 }
 
-/* ================= SHIPPING BOX ================= */
 .shipping{
   background:white;
-  color:black;
-
   width:350px;
-  margin:auto;
+  margin:30px auto;
   padding:20px;
   border-radius:10px;
-}
-
-/* IMPORTANT: only shipping inputs */
-.shipping input{
-  width:90%;
-  padding:10px;
-  margin:10px 0;
   color:black;
 }
 
-/* BUTTON FIX */
+.shipping input{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:1px solid #ccc;
+  border-radius:5px;
+  color:black;
+}
+
 button{
   background:orange;
   border:none;
@@ -147,12 +127,19 @@ button{
   cursor:pointer;
   border-radius:5px;
   color:black;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#6b0b0b;
+  color:white;
 }
 
 /* ================= FOOTER ================= */
+
 footer{
   background:#111;
-  margin-top:auto;
+  margin-top:50px;
 }
 
 .footer-container{
@@ -176,31 +163,29 @@ footer i{
   border-top:1px solid gray;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE (STYLE.CSS MATCH) ================= */
 
-/* Tablet */
+/* TABLET */
 @media (max-width:900px){
 
   .navbar{
-    height:auto;
     flex-wrap:wrap;
+    height:auto;
     padding:15px;
     gap:15px;
   }
 
-  .logo{ font-size:28px; }
-
-  .search{ width:80%; }
+  .search{
+    width:300px;
+  }
 
   .menu-bar{
     height:auto;
     padding:15px;
   }
 
-  .links{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
+  #cartItems{
+    margin:20px;
   }
 
   .shipping{
@@ -209,12 +194,12 @@ footer i{
 
   .footer-container{
     flex-wrap:wrap;
-    gap:30px;
+    gap:20px;
     text-align:center;
   }
 }
 
-/* Mobile FIX (MAIN ISSUE SOLVED HERE) */
+/* MOBILE */
 @media (max-width:600px){
 
   .navbar{
@@ -224,13 +209,12 @@ footer i{
     text-align:center;
   }
 
-  .logo{ font-size:25px; }
-
-  .location{ font-size:16px; }
+  .logo{
+    font-size:26px;
+  }
 
   .search{
-    width:95%;
-    height:38px;
+    width:90%;
   }
 
   .menu-bar{
@@ -260,7 +244,7 @@ footer i{
   }
 
   .shipping input{
-    width:85%;
+    width:100%;
   }
 
   button{
@@ -269,8 +253,8 @@ footer i{
 
   .footer-container{
     flex-direction:column;
-    padding:25px;
     text-align:center;
+    padding:25px;
   }
 
   footer h2{
@@ -278,7 +262,7 @@ footer i{
   }
 }
 
-/* Small Mobile */
+/* SMALL MOBILE */
 @media (max-width:400px){
 
   .logo{
