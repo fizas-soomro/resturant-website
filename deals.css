@@ -1,280 +1,402 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: white;
-  font-family: Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
 }
 
-/* ================= BACKGROUND ================= */
 
-body{
-  background-image: url("https://thumbs.dreamstime.com/b/unhealthy-fast-food-delivery-menu-featuring-assorted-burgers-cheeseburgers-nuggets-french-fries-soda-high-calorie-low-356045884.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+body {
+
+    min-height: 100vh;
+    background-image: url("https://thumbs.dreamstime.com/b/unhealthy-fast-food-delivery-menu-featuring-assorted-burgers-cheeseburgers-nuggets-french-fries-soda-high-calorie-low-356045884.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+
 }
 
-/* DARK OVERLAY */
-body::before{
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
-}
+
 
 /* ================= NAVBAR ================= */
 
-.navbar{
-  height:70px;
-  background:#420808;
-  display:flex;
-  align-items:center;
-  justify-content:space-around;
+
+header {
+
+    width: 100%;
+
 }
 
-.logo{
-  font-size:32px;
-  font-weight:bold;
-  color:orange;
+
+.navbar {
+    background-color: #420808;
+
+    width: 100%;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 0;
+
 }
 
-.search{
-  display:flex;
-  height:40px;
-  width:400px;
+
+
+.logo {
+
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffb703;
+
 }
 
-.search select{
-  width:60px;
+
+
+.links {
+
+    display: flex;
+    gap: 25px;
+
 }
 
-.search input{
-  flex:1;
-  padding:10px;
-  border:none;
+
+.links a {
+
+    text-decoration: none;
+    font-size: 18px;
+    transition: .3s;
+
 }
 
-.search i{
-  background:orange;
-  color:#420808;
-  padding:12px;
+
+
+.links a:hover {
+
+    color: #ffb703;
+
 }
 
-.links{
-  display:flex;
-  gap:30px;
+
+
+.cart-icon a {
+
+    text-decoration: none;
+    font-size: 18px;
+
 }
 
-.links a{
-  text-decoration:none;
-  color:white;
+
+.cart-icon i {
+
+    margin-right: 5px;
+
 }
 
-.links a:hover{
-  color:orange;
+
+
+/* ================= DEALS ================= */
+
+
+
+#dealList {
+
+
+    width: 90%;
+    margin: 40px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    flex: 1;
+    transition:0.4s;
+
+    cursor:pointer;
+
+
+}
+#dealist:hover{
+    transform:translateY(-10px);
+
+    box-shadow:0 10px 25px #ffb703;
+
 }
 
-/* ================= MENU BAR ================= */
 
-.menu-bar{
-  height:50px;
-  background:#6b0b0b;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
+
+
+
+.deal-card {
+
+    background: rgba(0, 0, 0, 0.65);
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 0 15px black;
+
+
 }
 
-/* ================= DEAL GRID ================= */
 
-#dealList{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  padding:30px;
-  justify-content:center;
+
+
+.deal-card img {
+
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
 }
 
-.deal-card{
-  width:250px;
-  background:white;
-  border-radius:10px;
-  overflow:hidden;
-  text-align:center;
-  padding-bottom:10px;
-  border:5px solid #ddd;
-  transition:0.3s;
-  color:black;
+
+.deal-card h2 {
+
+    margin: 15px 0;
+
+    color: #ffb703;
+
 }
 
-.deal-card:hover{
-  transform:scale(1.05);
+
+
+.deal-card p {
+
+    font-size: 18px;
+
 }
 
-.deal-card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
+
+
+.deal-card button {
+
+
+    margin-top: 15px;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #ffb703;
+
+    color: black;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
 }
 
-.price{
-  color:green;
-  font-weight:bold;
-}
 
-.old-price{
-  text-decoration:line-through;
-  color:gray;
-  font-size:14px;
-}
-
-button{
-  background:darkred;
-  color:white;
-  padding:8px 12px;
-  border:none;
-  cursor:pointer;
-  margin-top:5px;
-  border-radius:5px;
-}
-
-button:hover{
-  background:black;
-}
 
 /* ================= FOOTER ================= */
 
-footer{
-  background:#111;
-  margin-top:50px;
+
+
+footer {
+
+
+    background: #111;
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 30px 0 15px;
+
 }
 
-.footer-container{
-  display:flex;
-  justify-content:space-around;
-  padding:40px;
+
+
+.footer-container {
+
+
+    width: 90%;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
 }
 
-footer h2{
-  color:orange;
+
+
+.footer-container div {
+
+    flex: 1;
+
 }
 
-footer i{
-  font-size:25px;
-  margin:10px;
+
+
+.footer-container h2 {
+
+    color: #ffb703;
+
+    margin-bottom: 10px;
+
 }
 
-.copyright{
-  text-align:center;
-  padding:20px;
-  border-top:1px solid gray;
+
+
+.footer-container p {
+
+    margin: 8px 0;
+
 }
 
-/* ================= RESPONSIVE (STYLE.CSS MATCH) ================= */
 
-/* TABLET */
-@media (max-width:900px){
 
-  .navbar{
-    flex-wrap:wrap;
-    height:auto;
-    padding:15px;
-    gap:15px;
-  }
+.footer-container i {
 
-  .search{
-    width:300px;
-  }
+    margin-right: 8px;
 
-  .menu-bar{
-    height:auto;
-    padding:15px;
-  }
-
-  #dealList{
-    padding:20px;
-  }
-
-  .deal-card{
-    width:220px;
-  }
-
-  .footer-container{
-    flex-wrap:wrap;
-    gap:20px;
-    text-align:center;
-  }
 }
 
-/* MOBILE */
-@media (max-width:600px){
 
-  .navbar{
-    flex-direction:column;
-    height:auto;
-    padding:20px;
-    text-align:center;
-  }
 
-  .logo{
-    font-size:26px;
-  }
+.copyright {
 
-  .search{
-    width:90%;
-  }
 
-  .menu-bar{
-    flex-direction:column;
-    gap:15px;
-    padding:20px;
-  }
+    text-align: center;
 
-  .links{
-    flex-direction:column;
-    align-items:center;
-    gap:15px;
-  }
+    margin-top: 20px;
 
-  #dealList{
-    flex-direction:column;
-    align-items:center;
-    padding:15px;
-  }
+    font-size: 14px;
 
-  .deal-card{
-    width:85%;
-  }
-
-  .deal-card img{
-    height:200px;
-  }
-
-  button{
-    width:70%;
-  }
-
-  .footer-container{
-    flex-direction:column;
-    text-align:center;
-    padding:25px;
-  }
 }
 
-/* SMALL MOBILE */
-@media (max-width:400px){
 
-  .deal-card{
-    width:90%;
-  }
 
-  .deal-card img{
-    height:160px;
-  }
+/* ================= MOBILE ================= */
 
-  .logo{
-    font-size:22px;
-  }
+
+
+@media(max-width:768px) {
+
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+
+    }
+
+
+
+    .logo {
+
+        font-size: 28px;
+
+    }
+
+
+
+    .links {
+
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+
+    #dealList {
+
+
+        grid-template-columns: 1fr;
+
+        width: 90%;
+
+        margin: 25px auto;
+
+    }
+
+
+
+    .deal-card img {
+
+        height: 180px;
+
+    }
+
+
+
+    .footer-container {
+
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 30px;
+
+    }
+
+
+
+    footer {
+
+        padding: 25px 0;
+
+    }
+
+
+}
+
+
+
+@media(max-width:400px) {
+
+
+    .logo {
+
+        font-size: 24px;
+
+    }
+
+
+    .links a,
+    .cart-icon a {
+
+        font-size: 16px;
+
+    }
+
+
+
+    .deal-card {
+
+        padding: 15px;
+
+    }
+
+
 }
