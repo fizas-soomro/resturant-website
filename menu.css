@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* ================= BACKGROUND ================= */
@@ -14,6 +14,7 @@ body{
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 /* DARK OVERLAY */
@@ -21,260 +22,233 @@ body::before{
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.75); /* Readability behtar karne ke liye isko thoda dark kiya hai */
   z-index: -1;
 }
 
 /* ================= NAVBAR ================= */
 
 .navbar{
-  height:70px;
-  background:#420808;
-  display:flex;
-  align-items:center;
-  justify-content:space-around;
+  min-height: 70px;
+  background: #420808;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 20px;
 }
 
 .logo{
-  font-size:32px;
-  font-weight:bold;
-  color:orange;
+  font-size: 32px;
+  font-weight: bold;
+  color: orange;
 }
 
 .search{
-  display:flex;
-  height:40px;
-  width:400px;
+  display: flex;
+  height: 40px;
+  width: 400px;
 }
 
 .search select{
-  width:60px;
+  width: 60px;
 }
 
 .search input{
-  flex:1;
-  padding:10px;
-  border:none;
+  flex: 1;
+  padding: 10px;
+  border: none;
+  color: black; /* Input text white hone se chup raha tha */
 }
 
 .search i{
-  background:orange;
-  color:#420808;
-  padding:12px;
+  background: orange;
+  color: #420808;
+  padding: 12px;
 }
 
 .links{
-  display:flex;
-  gap:30px;
+  display: flex;
+  gap: 30px;
 }
 
 .links a{
-  text-decoration:none;
-  color:white;
+  text-decoration: none;
+  color: white;
 }
 
 .links a:hover{
-  color:orange;
+  color: orange;
 }
 
 /* ================= TITLE ================= */
 
 .title{
-  text-align:center;
-  margin:30px 0;
-  font-size:36px;
-  color:white;
+  text-align: center;
+  margin: 30px 0;
+  font-size: 36px;
+  color: white;
 }
 
 /* ================= PRODUCTS GRID ================= */
 
 .products{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:25px;
-  padding:40px;
+  display: grid;
+  /* Auto-fit lagane se desktop par 4 aur mobile par automatically cards scale ho jayenge */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* ================= FOOD CARD ================= */
 
 .food-card{
-  background:transparent;
-  border:3px solid rgb(150,147,147);
-  border-radius:15px;
-  padding:15px;
-  text-align:center;
-  transition:0.3s;
+  background: rgba(0, 0, 0, 0.4); /* Card ke peeche halka black color taake content clear dikhe */
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Taake button hamesha bottom par line up rahe */
 }
 
 .food-card:hover{
-  transform:scale(1.05);
+    transform:translateY(-10px);
+
+    box-shadow:0 10px 25px #ffb703;
 }
 
 .food-img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:12px;
-  margin-bottom:12px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
 .food-card h2{
-  color:orange;
-  margin:10px 0;
+  color: orange;
+  margin: 10px 0;
+  font-size: 22px;
 }
 
 .food-card p{
-  color:#ddd;
-  margin-bottom:10px;
+  color: #ddd;
+  margin-bottom: 10px;
 }
 
 .food-card button{
-  margin-top:10px;
-  background:orange;
-  border:none;
-  padding:10px 20px;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.3s;
-  color:black;
+  margin-top: auto; /* Button ko auto niche push karega */
+  background: orange;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: black;
+  font-weight: bold;
 }
 
 .food-card button:hover{
-  background:#6b0b0b;
-  color:white;
+  background: #6b0b0b;
+  color: white;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-  background:#111;
-  margin-top:50px;
+  background: #111;
+  margin-top: 50px;
 }
 
 .footer-container{
-  display:flex;
-  justify-content:space-around;
-  padding:40px;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
 }
 
 footer h2{
-  color:orange;
+  color: orange;
 }
 
 footer i{
-  font-size:25px;
-  margin:10px;
+  font-size: 25px;
+  margin: 10px;
 }
 
 .copyright{
-  text-align:center;
-  padding:20px;
-  border-top:1px solid gray;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid gray;
 }
 
-/* ================= RESPONSIVE (STYLE.CSS MATCH) ================= */
+/* ================= RESPONSIVE MEDIA QUERIES ================= */
 
-/* TABLET */
-@media (max-width:900px){
-
+/* TABLET & SMALL LAPTOPS */
+@media (max-width: 992px){
   .navbar{
-    flex-wrap:wrap;
-    height:auto;
-    padding:15px;
-    gap:15px;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
   }
 
   .search{
-    width:300px;
+    width: 80%;
+    order: 3; /* Search bar ko mobile/tablet par links ke neeche lane ke liye */
   }
 
   .products{
-    grid-template-columns:repeat(2, 1fr);
-    padding:30px;
-    gap:20px;
-  }
-
-  .food-img{
-    height:170px;
-  }
-
-  .footer-container{
-    flex-wrap:wrap;
-    gap:20px;
-    text-align:center;
+    grid-template-columns: repeat(2, 1fr); /* Tablet par ek row mein 2 cards */
+    padding: 20px;
   }
 }
 
 /* MOBILE */
-@media (max-width:600px){
-
+@media (max-width: 600px){
   .navbar{
-    flex-direction:column;
-    height:auto;
-    padding:20px;
-    text-align:center;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
   }
 
   .logo{
-    font-size:26px;
+    font-size: 28px;
   }
 
   .search{
-    width:90%;
+    width: 100%;
   }
 
   .links{
-    flex-direction:column;
-    align-items:center;
-    gap:15px;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .title{
-    font-size:28px;
-    margin:20px 0;
+    font-size: 28px;
   }
 
   .products{
-    grid-template-columns:1fr;
-    padding:20px;
-    gap:20px;
-  }
-
-  .food-card{
-    padding:15px;
+    grid-template-columns: 1fr; /* Mobile par exact 1 full-width card aayega per row */
+    padding: 15px;
+    gap: 20px;
   }
 
   .food-img{
-    height:200px;
+    height: 220px; /* Mobile par thodi badi image achi lagti hai */
   }
 
   .food-card button{
-    width:80%;
+    width: 100%;
   }
 
   .footer-container{
-    flex-direction:column;
-    padding:25px;
-    text-align:center;
-  }
-}
-
-/* SMALL MOBILE */
-@media (max-width:400px){
-
-  .title{
-    font-size:24px;
-  }
-
-  .products{
-    padding:15px;
-  }
-
-  .food-img{
-    height:160px;
-  }
-
-  footer h2{
-    font-size:20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
   }
 }
