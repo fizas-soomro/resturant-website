@@ -1,338 +1,277 @@
 *{
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   color: white;
+  font-family: Arial, sans-serif;
 }
-/* PURE PAGE BACKGROUND */
+
+/* ================= BACKGROUND ================= */
+
 body{
-    background-image: url("https://thumbs.dreamstime.com/b/unhealthy-fast-food-delivery-menu-featuring-assorted-burgers-cheeseburgers-nuggets-french-fries-soda-high-calorie-low-356045884.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  background-image: url("https://thumbs.dreamstime.com/b/unhealthy-fast-food-delivery-menu-featuring-assorted-burgers-cheeseburgers-nuggets-french-fries-soda-high-calorie-low-356045884.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-/* Optional dark overlay effect pure page ke liye */
+/* DARK OVERLAY */
 body::before{
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.623);
-    z-index: -1;
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
 }
 
-/* NAVBAR */
-
+/* ================= NAVBAR ================= */
 
 .navbar{
-
-height:70px;
-background:#420808;
-color:white;
-
-display:flex;
-align-items:center;
-justify-content:space-around;
-
+  height:70px;
+  background:#420808;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
 }
-
 
 .logo{
-
-font-size:32px;
-font-weight:bold;
-
-color:orange;
-
+  font-size:32px;
+  font-weight:bold;
+  color:orange;
 }
-
-
-
-.location{
-
-font-size:18px;
-
-}
-
-
 
 .search{
-
-display:flex;
-
-height:40px;
-width:400px;
-
+  display:flex;
+  height:40px;
+  width:400px;
 }
-
 
 .search select{
-
-width:60px;
-
+  width:60px;
 }
-
 
 .search input{
-
-flex:1;
-padding:10px;
-
-border:none;
-
+  flex:1;
+  padding:10px;
+  border:none;
 }
-
-
 
 .search i{
-
-background:orange;
-
-color:#420808;
-
-padding:12px;
-
+  background:orange;
+  color:#420808;
+  padding:12px;
 }
-
-
-
-.account span{
-
-font-size:13px;
-
-}
-
-
-
-.cart-icon{
-
-font-size:18px;
-
-}
-.cart-icon a{
-    text-decoration: none;
-    color: white;
-}
-
-
-
-
-
-.menu-bar{
-
-height:50px;
-
-background:#6b0b0b;
-
-color:white;
-
-display:flex;
-
-justify-content:space-around;
-
-align-items:center;
-
-}
-
-
 
 .links{
-
-display:flex;
-
-gap:30px;
-
+  display:flex;
+  gap:30px;
 }
 
-
-
-.links a,
-.menu-bar a{
-
-color:white;
-
-text-decoration:none;
-
+.links a{
+  text-decoration:none;
+  color:white;
 }
-
-
 
 .links a:hover{
-
-color:orange;
-
+  color:orange;
 }
 
-
-
+/* ================= BOX / LOGIN ================= */
 
 header a{
-
-color:white;
-
-text-decoration:none;
-
+  color:white;
+  text-decoration:none;
 }
-
-
-
 
 .box,
 .login{
-
-
-background:white;
-
-width:350px;
-
-margin:30px auto;
-
-padding:25px;
-
-border-radius:15px;
-
-box-shadow:10px 10px 10px rgb(90, 2, 2);
-
-
+  background:white;
+  width:350px;
+  margin:40px auto;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:10px 10px 10px rgba(90, 2, 2, 0.6);
+  color:black;
 }
-
-
 
 input{
-
-width:90%;
-
-padding:12px;
-
-margin:10px;
-
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:1px solid #ccc;
+  border-radius:5px;
+  color:black;
 }
-
-
 
 button{
-
-
-background:orange;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:8px;
-
-cursor:pointer;
-
+  background:orange;
+  border:none;
+  padding:12px 25px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+  color:black;
 }
-
-
 
 button:hover{
-
-background:#420808;
-
-color:white;
-
+  background:#420808;
+  color:white;
 }
-
-
 
 #result{
-
-
-margin-top:20px;
-
-font-size:18px;
-
-}footer{
-
-background:#111;
-
-color:white;
-
-margin-top:50px;
-
+  margin-top:20px;
+  font-size:18px;
+  color:white;
 }
 
+/* ================= FOOTER ================= */
 
+footer{
+  background:#111;
+  margin-top:50px;
+}
 
 .footer-container{
-
-display:flex;
-
-justify-content:space-around;
-
-padding:40px;
-
+  display:flex;
+  justify-content:space-around;
+  padding:40px;
 }
-
-
 
 footer h2{
-
-color:orange;
-
+  color:orange;
 }
-
-
 
 footer i{
-
-font-size:25px;
-
-margin:10px;
-
+  font-size:25px;
+  margin:10px;
 }
-
-
 
 .copyright{
-
-text-align:center;
-
-padding:20px;
-
-border-top:1px solid gray;
-
+  text-align:center;
+  padding:20px;
+  border-top:1px solid gray;
 }
 
-/* ================= PAGE LAYOUT FIX ================= */
+/* ================= RESPONSIVE (STYLE.CSS MATCH) ================= */
 
-html, body {
-  height: 100%;
+/* TABLET */
+@media (max-width:900px){
+
+  .navbar{
+    flex-wrap:wrap;
+    height:auto;
+    padding:15px;
+    gap:15px;
+  }
+
+  .search{
+    width:300px;
+  }
+
+  .menu-bar{
+    height:auto;
+    padding:15px;
+  }
+
+  .links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+
+  .box,
+  .login{
+    width:70%;
+  }
+
+  .footer-container{
+    flex-wrap:wrap;
+    gap:20px;
+    text-align:center;
+  }
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* MOBILE */
+@media (max-width:600px){
+
+  .navbar{
+    flex-direction:column;
+    height:auto;
+    padding:20px;
+    text-align:center;
+  }
+
+  .logo{
+    font-size:26px;
+  }
+
+  .search{
+    width:90%;
+  }
+
+  .menu-bar{
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+  }
+
+  .links{
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+  }
+
+  .box,
+  .login{
+    width:85%;
+    padding:20px;
+  }
+
+  input{
+    width:100%;
+  }
+
+  button{
+    width:80%;
+  }
+
+  #result{
+    font-size:16px;
+  }
+
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+    padding:25px;
+  }
+
+  footer h2{
+    font-size:22px;
+  }
+
+  footer i{
+    font-size:22px;
+  }
 }
 
-/* agar tumhara main content wrapper hai to ye best hai */
-.main-content {
-  flex: 1;
-}
+/* SMALL MOBILE */
+@media (max-width:400px){
 
-/* FOOTER FIX */
-footer {
-  margin-top: auto;
-  position: relative;
-  z-index: 2;
-}
+  .logo{
+    font-size:22px;
+  }
 
-/* overlay fix (important) */
-body::before {
-  z-index: 0;
-}
+  .search{
+    width:100%;
+  }
 
-.navbar,
-.menu-bar,
-.box,
-.login,
-.footer-container {
-  position: relative;
-  z-index: 2;
+  .box,
+  .login{
+    width:90%;
+  }
+
+  .footer-container{
+    padding:15px;
+  }
 }
