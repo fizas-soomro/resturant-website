@@ -1,0 +1,480 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+/* PURE PAGE BACKGROUND */
+body{
+    background-image: url("https://thumbs.dreamstime.com/b/unhealthy-fast-food-delivery-menu-featuring-assorted-burgers-cheeseburgers-nuggets-french-fries-soda-high-calorie-low-356045884.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Optional dark overlay effect pure page ke liye */
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.623);
+    z-index: -1;
+}
+
+/* NAVBAR */
+
+
+.navbar{
+
+height:70px;
+background:#420808;
+color:white;
+
+display:flex;
+align-items:center;
+justify-content:space-around;
+
+}
+
+
+.logo{
+
+font-size:32px;
+font-weight:bold;
+
+color:orange;
+
+}
+
+
+
+.location{
+
+font-size:18px;
+
+}
+
+
+
+.search{
+
+display:flex;
+
+height:40px;
+width:400px;
+
+}
+
+
+.search select{
+
+width:60px;
+
+}
+
+
+.search input{
+
+flex:1;
+padding:10px;
+
+border:none;
+
+}
+
+
+
+.search i{
+
+background:orange;
+
+color:#420808;
+
+padding:12px;
+
+}
+
+
+
+.account span{
+
+font-size:13px;
+
+}
+
+
+
+.cart-icon{
+
+font-size:18px;
+
+}
+.cart-icon a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
+
+.links{
+
+display:flex;
+
+gap:30px;
+
+}
+
+
+
+.links a,
+.menu-bar a{
+
+color:white;
+
+text-decoration:none;
+
+}
+
+
+
+.links a:hover{
+
+color:orange;
+
+}
+
+
+/* ================= TITLE ================= */
+
+.title {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 36px;
+  color: #fcf9f9;
+}
+
+/* ================= PRODUCTS GRID ================= */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 40px;
+}
+
+/* ================= FOOD CARD ================= */
+
+.food-card {
+  background: transparent;
+  color: white;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+  overflow: hidden;
+  border: 3px solid rgb(150, 147, 147);
+}
+
+.food-card:hover {
+  transform: scale(1.05);
+}
+
+/* IMAGE FIX */
+.food-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.food-card h2 {
+  color: orange;
+  margin: 10px 0;
+}
+
+.food-card p {
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.food-card button {
+  margin-top: 10px;
+  background: orange;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.food-card button:hover {
+  background: #6b0b0b;
+  color: white;
+}
+/* FOOTER */
+
+
+footer{
+
+background:#111;
+
+color:white;
+
+margin-top:50px;
+
+}
+
+
+
+.footer-container{
+
+display:flex;
+
+justify-content:space-around;
+
+padding:40px;
+
+}
+
+
+
+footer h2{
+
+color:orange;
+
+}
+
+
+
+footer i{
+
+font-size:25px;
+
+margin:10px;
+
+}
+
+
+
+.copyright{
+
+text-align:center;
+
+padding:20px;
+
+border-top:1px solid gray;
+
+}
+/* ================= RESPONSIVE ================= */
+
+
+/* Tablet */
+@media (max-width: 1000px){
+
+    .navbar{
+        flex-wrap: wrap;
+        height:auto;
+        padding:15px;
+        gap:15px;
+    }
+
+
+    .search{
+        width:70%;
+    }
+
+
+    .products{
+
+        grid-template-columns: repeat(2, 1fr);
+        padding:30px;
+        gap:20px;
+
+    }
+
+
+    .food-img{
+
+        height:170px;
+
+    }
+
+
+    .footer-container{
+
+        flex-wrap:wrap;
+        gap:30px;
+        text-align:center;
+
+    }
+
+}
+
+
+
+/* Mobile */
+@media (max-width:600px){
+
+
+    .navbar{
+
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+        text-align:center;
+
+    }
+
+
+
+    .logo{
+
+        font-size:26px;
+
+    }
+
+
+
+    .location{
+
+        font-size:16px;
+
+    }
+
+
+
+    .search{
+
+        width:95%;
+        height:38px;
+
+    }
+
+
+
+    .search select{
+
+        width:50px;
+
+    }
+
+
+
+    .links{
+
+        flex-direction:column;
+        gap:15px;
+        align-items:center;
+
+    }
+
+
+
+    .title{
+
+        font-size:28px;
+        margin:20px 0;
+
+    }
+
+
+
+    .products{
+
+        grid-template-columns:1fr;
+        padding:20px;
+        gap:20px;
+
+    }
+
+
+
+    .food-card{
+
+        padding:15px;
+
+    }
+
+
+
+    .food-img{
+
+        height:200px;
+
+    }
+
+
+
+    .food-card h2{
+
+        font-size:22px;
+
+    }
+
+
+
+    .food-card button{
+
+        width:80%;
+    }
+
+
+
+    .footer-container{
+
+        flex-direction:column;
+        padding:25px;
+        text-align:center;
+
+    }
+
+
+}
+
+
+
+/* Small Mobile */
+@media (max-width:400px){
+
+
+    .title{
+
+        font-size:24px;
+
+    }
+
+
+
+    .products{
+
+        padding:15px;
+
+    }
+
+
+
+    .food-img{
+
+        height:160px;
+
+    }
+
+
+
+    footer h2{
+
+        font-size:20px;
+
+    }
+
+}

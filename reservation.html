@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Reservation</title>
+
+<link rel="stylesheet" href="reservation .css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+</head>
+
+
+<body>
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Martini
+            </div>
+
+
+
+
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="reservation.html">Reservation</a>
+                <a href="deals.html">Hot Deals</a>
+
+            </div>
+            <div class="cart-icon">
+                <a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Cart
+                </a>
+            </div>
+        </nav>
+
+
+
+    </header>
+
+
+
+
+
+
+<section class="box">
+
+
+<h2>
+Reserve Your Table
+</h2>
+
+
+
+<input id="name" placeholder="Your Name">
+
+
+<input id="phone" placeholder="Phone Number">
+
+
+<input id="date" type="date">
+
+
+<input id="time" type="time">
+
+
+<input id="guests" type="number" placeholder="Number of Guests">
+
+
+
+<button onclick="reserve()">
+
+Reserve Seat
+
+</button>
+
+
+
+</section>
+
+<section class="login">
+
+
+<h2>
+Check Your Reservation
+</h2>
+
+
+<input id="checkPhone" placeholder="Enter Phone Number">
+
+
+<button onclick="checkReservation()">
+
+Login & Check
+
+</button>
+
+
+
+<div id="result"></div>
+
+
+</section>
+<footer>
+
+
+        <div class="footer-container">
+
+
+            <div>
+
+                <h2>Martini</h2>
+
+                <p>
+                    Best restaurant with delicious food and fast delivery.
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <h2>Contact</h2>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    0300-0000000
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    martini@gmail.com
+                </p>
+
+            </div>
+
+
+
+
+            <div>
+
+                <h2>Follow Us</h2>
+
+
+                <i class="fa-brands fa-facebook"></i>
+
+                <i class="fa-brands fa-instagram"></i>
+
+                <i class="fa-brands fa-twitter"></i>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <p class="copyright">
+            © 2026 Martini Restaurant
+        </p>
+
+
+
+    </footer>
+
+
+
+
+
+
+
+
+<script src="reservation.js"></script>
+
+
+</body>
+
+</html>
