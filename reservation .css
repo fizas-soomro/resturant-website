@@ -299,6 +299,63 @@ border-top:1px solid gray;
 
 }
 /* ================= RESPONSIVE DESIGN FIXED ================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url("your-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial;
+}
+
+/* center main container */
+.reservation-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* form box */
+.form-box{
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* inputs */
+.form-box input{
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* button */
+button{
+  width: 100%;
+  padding: 10px;
+  background: orange;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px){
+  .form-box{
+    width: 95%;
+  }
+}
 
 /* Tablet (max 900px) */
 @media (max-width: 900px) {
