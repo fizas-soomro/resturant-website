@@ -1,279 +1,551 @@
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: white;
-  font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Times New Roman', Times, serif;
+    color:white;
 }
 
-/* ================= BACKGROUND ================= */
 
 body{
-  background-image: url("https://thumbs.dreamstime.com/b/unhealthy-fast-food-delivery-menu-featuring-assorted-burgers-cheeseburgers-nuggets-french-fries-soda-high-calorie-low-356045884.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+
+    min-height:100vh;
+
+    background-image:url("https://thumbs.dreamstime.com/b/unhealthy-fast-food-delivery-menu-featuring-assorted-burgers-cheeseburgers-nuggets-french-fries-soda-high-calorie-low-356045884.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
-/* DARK OVERLAY */
-body::before{
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
-}
+
 
 /* ================= NAVBAR ================= */
 
+
 .navbar{
-  height:70px;
-  background:#420808;
-  display:flex;
-  align-items:center;
-  justify-content:space-around;
+
+background-color: #420808;
+    width:100%;
+
+    margin:auto;
+
+    padding:20px 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
 }
+
+
 
 .logo{
-  font-size:32px;
-  font-weight:bold;
-  color:orange;
+
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:#ffb703;
+
 }
 
-.search{
-  display:flex;
-  height:40px;
-  width:400px;
-}
 
-.search select{
-  width:60px;
-}
-
-.search input{
-  flex:1;
-  padding:10px;
-  border:none;
-}
-
-.search i{
-  background:orange;
-  color:#420808;
-  padding:12px;
-}
 
 .links{
-  display:flex;
-  gap:30px;
+
+
+    display:flex;
+
+    gap:25px;
+
 }
+
+
 
 .links a{
-  text-decoration:none;
-  color:white;
+
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.3s;
+
 }
+
+
 
 .links a:hover{
-  color:orange;
+
+    color:#ffb703;
+
 }
 
-/* ================= MENU BAR ================= */
 
-.menu-bar{
-  height:50px;
-  background:#6b0b0b;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
+
+.cart-icon a{
+
+
+    text-decoration:none;
+
+    font-size:18px;
+
 }
+
+
+
+.cart-icon i{
+
+    margin-right:5px;
+
+}
+
+
 
 /* ================= CART ================= */
 
+
+
 #cartItems{
-  margin:30px;
+
+
+    width:90%;
+
+    margin:40px auto 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+
 }
 
-.item{
-  background:transparent;
-  padding:20px;
-  margin:10px 0;
-  border-radius:10px;
-  border:2px solid #aaa;
-  color:white;
+
+
+.cart-card{
+
+
+    background:rgba(0,0,0,0.7);
+
+    padding:20px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 0 15px black;
+
+
 }
+
+
+
+.cart-card img{
+
+
+    width:120px;
+
+    height:100px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+
+}
+
+
+
+.cart-card h3{
+
+    color:#ffb703;
+
+}
+
+
+
+.cart-card button{
+
+
+    background:#ffb703;
+
+    color:black;
+
+    border:none;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+
+}
+
+
+
+#total{
+
+
+    width:90%;
+
+    margin:10px auto;
+
+    color:#ffb703;
+
+    font-size:25px;
+
+}
+
+
+
+/* ================= SHIPPING ================= */
+
 
 .shipping{
-  background:white;
-  width:350px;
-  margin:30px auto;
-  padding:20px;
-  border-radius:10px;
-  color:black;
+
+
+    width:90%;
+
+    max-width:600px;
+
+    margin:30px auto;
+
+    background:rgba(0,0,0,0.7);
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 0 15px black;
+
+
 }
+
+
+
+.shipping h2{
+
+
+    text-align:center;
+
+    color:#ffb703;
+
+    margin-bottom:20px;
+
+
+}
+
+
 
 .shipping input{
-  width:100%;
-  padding:10px;
-  margin:10px 0;
-  border:1px solid #ccc;
-  border-radius:5px;
-  color:black;
+
+
+    width:100%;
+
+    padding:14px;
+
+    margin:10px 0;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:8px;
+
+    color:black;
+
+    font-size:16px;
+
+
 }
 
-button{
-  background:orange;
-  border:none;
-  padding:12px 25px;
-  cursor:pointer;
-  border-radius:5px;
-  color:black;
-  transition:0.3s;
+
+
+.shipping button{
+
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:#ffb703;
+
+    color:black;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+
 }
 
-button:hover{
-  background:#6b0b0b;
-  color:white;
-}
+
+
 
 /* ================= FOOTER ================= */
 
+
+
 footer{
-  background:#111;
-  margin-top:50px;
+
+
+    margin-top:auto;
+
+    background:#111;
+
+    padding:30px 0 15px;
+
 }
+
+
 
 .footer-container{
-  display:flex;
-  justify-content:space-around;
-  padding:40px;
+
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+
 }
 
-footer h2{
-  color:orange;
+
+
+.footer-container div{
+
+    flex:1;
+
 }
 
-footer i{
-  font-size:25px;
-  margin:10px;
+
+
+.footer-container h2{
+
+
+    color:#ffb703;
+
+    margin-bottom:10px;
+
 }
+
+
+
+.footer-container p{
+
+    margin:8px 0;
+
+}
+
+
+
+.footer-container i{
+
+    margin-right:8px;
+
+}
+
+
 
 .copyright{
-  text-align:center;
-  padding:20px;
-  border-top:1px solid gray;
-}
 
-/* ================= RESPONSIVE (STYLE.CSS MATCH) ================= */
 
-/* TABLET */
-@media (max-width:900px){
-
-  .navbar{
-    flex-wrap:wrap;
-    height:auto;
-    padding:15px;
-    gap:15px;
-  }
-
-  .search{
-    width:300px;
-  }
-
-  .menu-bar{
-    height:auto;
-    padding:15px;
-  }
-
-  #cartItems{
-    margin:20px;
-  }
-
-  .shipping{
-    width:70%;
-  }
-
-  .footer-container{
-    flex-wrap:wrap;
-    gap:20px;
     text-align:center;
-  }
-}
 
-/* MOBILE */
-@media (max-width:600px){
+    margin-top:20px;
 
-  .navbar{
-    flex-direction:column;
-    height:auto;
-    padding:20px;
-    text-align:center;
-  }
-
-  .logo{
-    font-size:26px;
-  }
-
-  .search{
-    width:90%;
-  }
-
-  .menu-bar{
-    flex-direction:column;
-    gap:15px;
-    padding:20px;
-  }
-
-  .links{
-    flex-direction:column;
-    align-items:center;
-    gap:15px;
-  }
-
-  #cartItems{
-    margin:15px;
-  }
-
-  .item{
-    padding:15px;
-    text-align:center;
-  }
-
-  .shipping{
-    width:85%;
-    padding:15px;
-  }
-
-  .shipping input{
-    width:100%;
-  }
-
-  button{
-    width:80%;
-  }
-
-  .footer-container{
-    flex-direction:column;
-    text-align:center;
-    padding:25px;
-  }
-
-  footer h2{
-    font-size:22px;
-  }
-}
-
-/* SMALL MOBILE */
-@media (max-width:400px){
-
-  .logo{
-    font-size:22px;
-  }
-
-  .shipping{
-    width:90%;
-  }
-
-  .item{
     font-size:14px;
-  }
+
+}
+
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+
+@media(max-width:768px){
+
+
+
+.navbar{
+
+
+    flex-direction:column;
+
+    gap:20px;
+
+    text-align:center;
+
+
+}
+
+
+
+.logo{
+
+    font-size:28px;
+
+}
+
+
+
+.links{
+
+
+    flex-direction:column;
+
+    gap:15px;
+
+
+}
+
+
+
+#cartItems{
+
+
+    width:90%;
+
+    margin-top:25px;
+
+
+}
+
+
+
+.cart-card{
+
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:15px;
+
+
+}
+
+
+
+.cart-card img{
+
+
+    width:180px;
+
+    height:150px;
+
+
+}
+
+
+
+.shipping{
+
+
+    width:90%;
+
+    padding:20px;
+
+
+}
+
+
+
+.footer-container{
+
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:30px;
+
+
+}
+
+
+}
+
+
+
+
+@media(max-width:400px){
+
+
+
+.logo{
+
+    font-size:24px;
+
+}
+
+
+
+.links a,
+.cart-icon a{
+
+
+    font-size:16px;
+
+
+}
+
+
+
+.shipping h2{
+
+
+    font-size:20px;
+
+
+}
+
+
+
+.cart-card img{
+
+
+    width:150px;
+
+    height:120px;
+
+
+}
+
+
+
 }
