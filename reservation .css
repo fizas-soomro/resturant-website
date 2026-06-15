@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family:'Times New Roman', Times, serif;
 }
 
 /* ================= BACKGROUND ================= */
@@ -14,6 +14,10 @@ body{
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh; /* Ensure karta hai body kam se kam screen ki puri height le */
+  display: flex;
+  flex-direction: column;
 }
 
 /* DARK OVERLAY */
@@ -21,257 +25,200 @@ body::before{
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.75); /* Readability behtar karne ke liye slightly dark kiya */
   z-index: -1;
 }
 
 /* ================= NAVBAR ================= */
 
 .navbar{
-  height:70px;
-  background:#420808;
-  display:flex;
-  align-items:center;
-  justify-content:space-around;
+  min-height: 70px;
+  background: #420808;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 20px;
 }
 
 .logo{
-  font-size:32px;
-  font-weight:bold;
-  color:orange;
+  font-size: 32px;
+  font-weight: bold;
+  color: orange;
 }
 
 .search{
-  display:flex;
-  height:40px;
-  width:400px;
+  display: flex;
+  height: 40px;
+  width: 400px;
 }
 
 .search select{
-  width:60px;
+  width: 60px;
+  color: black;
 }
 
 .search input{
-  flex:1;
-  padding:10px;
-  border:none;
+  flex: 1;
+  padding: 10px;
+  border: none;
+  color: black;
 }
 
 .search i{
-  background:orange;
-  color:#420808;
-  padding:12px;
+  background: orange;
+  color: #420808;
+  padding: 12px;
 }
 
 .links{
-  display:flex;
-  gap:30px;
+  display: flex;
+  gap: 30px;
 }
 
 .links a{
-  text-decoration:none;
-  color:white;
+  text-decoration: none;
+  color: white;
 }
 
 .links a:hover{
-  color:orange;
+  color: orange;
+}
+
+/* ================= MAIN CONTENT WRAPPER ================= */
+
+/* Is se form aur content hamesha upper rahenge aur footer auto neeche push ho jayega */
+main, .content-wrapper {
+  flex: 1;
 }
 
 /* ================= BOX / LOGIN ================= */
 
 header a{
-  color:white;
-  text-decoration:none;
+  color: white;
+  text-decoration: none;
 }
 
 .box,
 .login{
-  background:white;
-  width:350px;
-  margin:40px auto;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:10px 10px 10px rgba(90, 2, 2, 0.6);
-  color:black;
+  background: white;
+  width: 100%;
+  max-width: 400px; /* Desktop par size handle karne ke liye */
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Modern shadow drop */
+  color: black;
 }
 
-input{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border:1px solid #ccc;
-  border-radius:5px;
-  color:black;
+/* Form elements spacing and fix */
+input, select{
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
 }
 
 button{
-  background:orange;
-  border:none;
-  padding:12px 25px;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.3s;
-  color:black;
+  background: orange;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: black;
+  font-weight: bold;
+  width: 100%; /* Forms ke buttons full-width responsive behtar lagte hain */
 }
 
 button:hover{
-  background:#420808;
-  color:white;
+  background: #420808;
+  color: white;
 }
 
 #result{
-  margin-top:20px;
-  font-size:18px;
-  color:white;
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+  text-align: center;
 }
 
 /* ================= FOOTER ================= */
-
 footer{
-  background:#111;
-  margin-top:50px;
+
+
+    background:#111;
+
+    width:100%;
+
+    margin-top:auto;
+
+    padding:30px 0 15px;
+
 }
+
+
 
 .footer-container{
-  display:flex;
-  justify-content:space-around;
-  padding:40px;
+
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
 }
 
-footer h2{
-  color:orange;
+
+
+.footer-container div{
+
+    flex:1;
+
 }
 
-footer i{
-  font-size:25px;
-  margin:10px;
+
+
+.footer-container h2{
+
+    color:#ffb703;
+
+    margin-bottom:10px;
+
 }
+
+
+
+.footer-container p{
+
+    margin:8px 0;
+
+}
+
+
+
+.footer-container i{
+
+    margin-right:8px;
+
+}
+
+
 
 .copyright{
-  text-align:center;
-  padding:20px;
-  border-top:1px solid gray;
-}
 
-/* ================= RESPONSIVE (STYLE.CSS MATCH) ================= */
 
-/* TABLET */
-@media (max-width:900px){
-
-  .navbar{
-    flex-wrap:wrap;
-    height:auto;
-    padding:15px;
-    gap:15px;
-  }
-
-  .search{
-    width:300px;
-  }
-
-  .menu-bar{
-    height:auto;
-    padding:15px;
-  }
-
-  .links{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-  }
-
-  .box,
-  .login{
-    width:70%;
-  }
-
-  .footer-container{
-    flex-wrap:wrap;
-    gap:20px;
     text-align:center;
-  }
-}
 
-/* MOBILE */
-@media (max-width:600px){
+    margin-top:20px;
 
-  .navbar{
-    flex-direction:column;
-    height:auto;
-    padding:20px;
-    text-align:center;
-  }
+    font-size:14px;
 
-  .logo{
-    font-size:26px;
-  }
-
-  .search{
-    width:90%;
-  }
-
-  .menu-bar{
-    flex-direction:column;
-    gap:15px;
-    padding:20px;
-  }
-
-  .links{
-    flex-direction:column;
-    align-items:center;
-    gap:15px;
-  }
-
-  .box,
-  .login{
-    width:85%;
-    padding:20px;
-  }
-
-  input{
-    width:100%;
-  }
-
-  button{
-    width:80%;
-  }
-
-  #result{
-    font-size:16px;
-  }
-
-  .footer-container{
-    flex-direction:column;
-    text-align:center;
-    padding:25px;
-  }
-
-  footer h2{
-    font-size:22px;
-  }
-
-  footer i{
-    font-size:22px;
-  }
-}
-
-/* SMALL MOBILE */
-@media (max-width:400px){
-
-  .logo{
-    font-size:22px;
-  }
-
-  .search{
-    width:100%;
-  }
-
-  .box,
-  .login{
-    width:90%;
-  }
-
-  .footer-container{
-    padding:15px;
-  }
 }
